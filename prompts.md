@@ -20,6 +20,32 @@
 | 실험 2: 같은 포즈, 다른 프롬프트 | pose_01 | BASE_01, P2_1_SUBJECT, P2_2_STYLE, P2_3_CONFLICT |
 | 실험 3: 같은 프롬프트, 다른 포즈 | pose_01, pose_02, pose_03 | BASE_01, BASE_01_NEUTRAL |
 
+실험 2·3은 BASE-01에서 점수가 가장 높았던 **A-openpose** 경로로 실행했습니다.
+
+## 프롬프트 ↔ 결과 파일 ↔ 측정값 (Colab T4, 2026-11-13 실행)
+
+파일 이름 규칙: `samples/<폴더>/<포즈>__<프롬프트 키>__<경로>__s<시드>.png` (+ `_verify.png` 검증 오버레이). 판정과 PCK는 `samples/results.json`의 값 그대로이며, 자동 2D 관절 비교 결과입니다(눈으로 본 판정은 README 참고).
+
+| 실험 | 프롬프트 키 | 포즈 | 경로 | 폴더 | seed 101 | seed 202 | seed 303 | 평균 PCK |
+|---|---|---|---|---|---|---|---|---|
+| BASE-01 | BASE_01 | pose_01 | A-sketch | base01_runs | FAIL 0.36 | FAIL 0.21 | FAIL 0.29 | 0.29 |
+| BASE-01 | BASE_01 | pose_01 | A-openpose | base01_runs | PARTIAL 0.64 | FAIL 0.36 | PARTIAL 0.57 | 0.52 |
+| BASE-01 | BASE_01 (SDXL 판) | pose_01 | B-draft | pathB_runs | PARTIAL 0.50 | FAIL 0.07 | FAIL 0.00 | 0.19 |
+| BASE-01 | BASE_01 | pose_01 | B | pathB_runs | FAIL 0.43 | FAIL 0.00 | FAIL 0.29 | 0.24 |
+| 실험 2 | BASE_01 | pose_01 | A-openpose | exp2_same_pose | PARTIAL 0.64 | FAIL 0.36 | - | 0.50 |
+| 실험 2 | P2_1_SUBJECT | pose_01 | A-openpose | exp2_same_pose | PARTIAL 0.50 | FAIL 0.36 | - | 0.43 |
+| 실험 2 | P2_2_STYLE | pose_01 | A-openpose | exp2_same_pose | PARTIAL 0.57 | FAIL 0.43 | - | 0.50 |
+| 실험 2 | P2_3_CONFLICT | pose_01 | A-openpose | exp2_same_pose | FAIL 0.21 | FAIL 0.29 | - | 0.25 |
+| 실험 3 | BASE_01 | pose_01 | A-openpose | exp3_same_prompt | PARTIAL 0.64 | FAIL 0.36 | - | 0.50 |
+| 실험 3 | BASE_01 | pose_02 | A-openpose | exp3_same_prompt | PARTIAL 0.79 | PARTIAL 0.50 | - | 0.64 |
+| 실험 3 | BASE_01 | pose_03 | A-openpose | exp3_same_prompt | PARTIAL 0.64 | SUCCESS 0.86 ※ | - | 0.75 |
+| 실험 3 | BASE_01_NEUTRAL | pose_01 | A-openpose | exp3_same_prompt | PARTIAL 0.86 | PARTIAL 0.64 | - | 0.75 |
+| 실험 3 | BASE_01_NEUTRAL | pose_02 | A-openpose | exp3_same_prompt | SUCCESS 1.00 | SUCCESS 1.00 | - | 1.00 |
+| 실험 3 | BASE_01_NEUTRAL | pose_03 | A-openpose | exp3_same_prompt | PARTIAL 0.71 | PARTIAL 0.57 | - | 0.64 |
+
+※ 자동 SUCCESS이지만 눈으로 보면 신체가 합쳐진 기형입니다(README 실험 3 참고).
+대표 이미지: `output_01.png` = BASE_01 / A-openpose / s101 (PARTIAL), `output_02.png` = NEUTRAL / pose_02 / s101 (SUCCESS), `output_03.png` = NEUTRAL / pose_03 / s101 (자동 PARTIAL, 눈으로는 앉지 않아 실패).
+
 ## 장면 프롬프트
 
 ### BASE_01

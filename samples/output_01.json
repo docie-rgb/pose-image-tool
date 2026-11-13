@@ -1,0 +1,38 @@
+{
+ "file": "samples/base01_runs/pose_01__BASE_01__A-openpose__s101.png",
+ "exp": "base",
+ "pose": "pose_01",
+ "prompt": "BASE_01",
+ "seed": 101,
+ "path": "A-openpose",
+ "control": "NOT ControlNet: Klein reference image",
+ "verdict": "PARTIAL",
+ "pck": 0.643,
+ "pck_swapped": 0.286,
+ "mean_err_px": 57.8,
+ "rules_pass": 7,
+ "rules_total": 9,
+ "n_people": 1,
+ "flags": [
+  "missing joints: l_elbow, l_wrist"
+ ],
+ "per_joint": {
+  "nose": 25.6,
+  "neck": 1.4,
+  "r_shoulder": 47.6,
+  "r_elbow": 190.6,
+  "r_wrist": 69.9,
+  "l_shoulder": 53.3,
+  "l_elbow": null,
+  "l_wrist": null,
+  "r_hip": 31.7,
+  "r_knee": 21.7,
+  "r_ankle": 179.0,
+  "l_hip": 46.9,
+  "l_knee": 20.2,
+  "l_ankle": 5.6
+ },
+ "leak": 0.0,
+ "pose_reference": "samples/pose_01.png",
+ "note": "경로 A는 정식 ControlNet이 아니라 Klein 4B 참조 이미지 방식입니다."
+}

@@ -1,0 +1,38 @@
+{
+ "file": "samples/exp3_same_prompt/pose_03__BASE_01_NEUTRAL__A-openpose__s101.png",
+ "exp": "exp3",
+ "pose": "pose_03",
+ "prompt": "BASE_01_NEUTRAL",
+ "seed": 101,
+ "path": "A-openpose",
+ "control": "NOT ControlNet: Klein reference image",
+ "verdict": "PARTIAL",
+ "pck": 0.714,
+ "pck_swapped": 0.143,
+ "mean_err_px": 30.0,
+ "rules_pass": null,
+ "rules_total": null,
+ "n_people": 4,
+ "flags": [
+  "4 people detected (mirror reflection?)"
+ ],
+ "per_joint": {
+  "nose": 3.1,
+  "neck": 9.8,
+  "r_shoulder": 3.2,
+  "r_elbow": 36.8,
+  "r_wrist": 73.1,
+  "l_shoulder": 3.9,
+  "l_elbow": 40.9,
+  "l_wrist": 79.5,
+  "r_hip": 55.7,
+  "r_knee": 28.4,
+  "r_ankle": 3.7,
+  "l_hip": 53.7,
+  "l_knee": 20.5,
+  "l_ankle": 7.5
+ },
+ "leak": 0.001,
+ "pose_reference": "samples/pose_03.png",
+ "note": "경로 A는 정식 ControlNet이 아니라 Klein 4B 참조 이미지 방식입니다."
+}
