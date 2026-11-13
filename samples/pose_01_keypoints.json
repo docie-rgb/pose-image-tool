@@ -1,0 +1,158 @@
+{
+  "pose_id": "pose_01",
+  "title": "BASE-01 복합 자세 (엎드림+걸터앉음+한 발 지지)",
+  "canvas": [
+    1344,
+    768
+  ],
+  "keypoint_order": [
+    "nose",
+    "neck",
+    "r_shoulder",
+    "r_elbow",
+    "r_wrist",
+    "l_shoulder",
+    "l_elbow",
+    "l_wrist",
+    "r_hip",
+    "r_knee",
+    "r_ankle",
+    "l_hip",
+    "l_knee",
+    "l_ankle",
+    "r_eye",
+    "l_eye",
+    "r_ear",
+    "l_ear"
+  ],
+  "keypoints": {
+    "nose": [
+      945,
+      350
+    ],
+    "neck": [
+      848,
+      362
+    ],
+    "r_shoulder": [
+      820,
+      300
+    ],
+    "r_elbow": [
+      975,
+      285
+    ],
+    "r_wrist": [
+      1105,
+      318
+    ],
+    "l_shoulder": [
+      878,
+      424
+    ],
+    "l_elbow": [
+      990,
+      470
+    ],
+    "l_wrist": [
+      1095,
+      438
+    ],
+    "r_hip": [
+      548,
+      503
+    ],
+    "r_knee": [
+      388,
+      492
+    ],
+    "r_ankle": [
+      505,
+      518
+    ],
+    "l_hip": [
+      600,
+      572
+    ],
+    "l_knee": [
+      760,
+      610
+    ],
+    "l_ankle": [
+      840,
+      716
+    ],
+    "r_eye": [
+      948,
+      326
+    ],
+    "l_eye": [
+      968,
+      358
+    ],
+    "r_ear": [
+      915,
+      312
+    ],
+    "l_ear": null
+  },
+  "props": {
+    "bench_seat": {
+      "box": [
+        140,
+        520,
+        570,
+        548
+      ]
+    },
+    "bench_legs": {
+      "boxes": [
+        [
+          165,
+          548,
+          190,
+          725
+        ],
+        [
+          520,
+          548,
+          545,
+          725
+        ]
+      ]
+    },
+    "pillow": {
+      "box": [
+        895,
+        290,
+        1400,
+        478
+      ]
+    },
+    "stand_top": {
+      "box": [
+        980,
+        478,
+        1250,
+        492
+      ]
+    },
+    "stand_post": {
+      "box": [
+        1100,
+        492,
+        1124,
+        717
+      ]
+    },
+    "stand_base": {
+      "box": [
+        1020,
+        717,
+        1205,
+        725
+      ]
+    }
+  },
+  "floor_y": 725
+}
